@@ -19,6 +19,7 @@ import { EmptyMessage, Task } from "./components";
 export function Home() {
   const {
     todos,
+    counts: {completed, created},
     handlers: { handleCreate, handleComplete, handleDelete },
   } = useTodo();
 
@@ -52,11 +53,11 @@ export function Home() {
         <View style={styles.statusDisplayContainer}>
           <View style={styles.displayArea}>
             <Text style={styles.createdDisplay}>Criadas</Text>
-            <Text style={styles.displayNumber}>0</Text>
+            <Text style={styles.displayNumber}>{created}</Text>
           </View>
           <View style={styles.displayArea}>
             <Text style={styles.completedDisplay}>Concluídas</Text>
-            <Text style={styles.displayNumber}>0</Text>
+            <Text style={styles.displayNumber}>{completed}</Text>
           </View>
         </View>
       </View>
